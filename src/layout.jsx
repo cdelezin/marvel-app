@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
                 </nav>
             </header>
             <main>
-                {children}
+                <Outlet />
             </main>
             <footer>
                 <p>Marvel App - 2025</p>

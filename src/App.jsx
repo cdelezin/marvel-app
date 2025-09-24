@@ -1,22 +1,14 @@
 import './App.css'
-import { BrowserRouter, Route, Routes } from "react-router";
-import AboutPage from './pages/AboutPage';
-import CharactersPage from './pages/CharactersPage';
-import ContactPage from './pages/ContactPage';
-import Layout from './Layout';
+import { createBrowserRouter, RouterProvider } from "react-router";
+import routes from './routes';
+
+// router to navigate through the app
+const router = createBrowserRouter(routes);
 
 function App() {
   return (
     <>
-      <Layout>
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<CharactersPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-        </BrowserRouter>
-      </Layout>
+      <RouterProvider router={router} />
     </>
   );
 }
