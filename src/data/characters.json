@@ -1,46 +1,46 @@
 [
     {
         "id": "1009175",
-        "nom": "Bête"
+        "name": "Beast"
     },
     {
         "id": "1009220",
-        "nom": "Captain America"
+        "name": "Captain America"
     },
     {
         "id": "1009268",
-        "nom": "Deadpool"
+        "name": "Deadpool"
     },
     {
         "id": "1010743",
-        "nom": "Groot"
+        "name": "Groot"
     },
     {
         "id": "1009351",
-        "nom": "Hulk"
+        "name": "Hulk"
     },
     {
         "id": "1009368",
-        "nom": "Iron Man"
+        "name": "Iron Man"
     },
     {
         "id": "1010744",
-        "nom": "Rocket Raccoon"
+        "name": "Rocket Raccoon"
     },
     {
         "id": "1009592",
-        "nom": "Surfer d'Argent"
+        "name": "Silver Surfer"
     },
     {
         "id": "1009697",
-        "nom": "Thanos"
+        "name": "Thanos"
     },
     {
         "id": "1009663",
-        "nom": "Thor"
+        "name": "Thor"
     },
     {
         "id": "1009718",
-        "nom": "Wolverine"
+        "name": "Wolverine"
     }
 ]
