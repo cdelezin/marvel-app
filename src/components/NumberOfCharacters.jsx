@@ -1,5 +1,7 @@
 
-function NumberOfCharacters({ characters }) {
+
+  function NumberOfCharacters({ characters = [] }) {
+
   const count = characters.length;
   
   if (count === 0) {
