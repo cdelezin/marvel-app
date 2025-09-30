@@ -2,7 +2,7 @@ import AboutPage from './pages/AboutPage';
 import CharactersPage from './pages/CharactersPage';
 import CharacterDetailPage from './pages/CharacterDetailPage';
 import ContactPage from './pages/ContactPage';
-import Layout from './Layout';
+import Layout from './Layout2';
 import NotFoundPage from './pages/NotFoundPage';
 import { getCharacters, getCharactersById } from './api/characters-api';
 
