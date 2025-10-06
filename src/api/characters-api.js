@@ -1,9 +1,18 @@
-import charactersData from '../data/characters.json';
+import characters from '../data/characters.json'
 
+/**
+ * returns the list of characters
+ * @returns 
+ */
 export const getCharacters = () => {
-    return  charactersData;
+  return characters;
 }
 
-export const getCharactersById = (id) => {
-    return charactersData.find(character => character.id === id);
+/**
+ * returns a character by id
+ * @param {*} id 
+ * @returns 
+ */
+export const getCharacterById = (id) => {
+  return characters.find(character => character.id === id);
 }

@@ -1,23 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router';
+import { Link } from "react-router";
 
-// Composant pour afficher la liste des personnages
-function CharactersList({ characters = [] }) {
-  if (characters.length === 0) {
-    return <p>Aucun personnage trouvé.</p>;
-  }
-
+export default function CharactersList({ characters = [] }) {
   return (
     <ul id="characters">
-      {characters.map((character, index) => (
-        <li key={character.id || index}>
-          <Link to={`/characters/${character.id}`} >
-          {character.name || character}
-          </Link>
-        </li>
+      {characters.map((character) => (
+        <Link to={`/characters/${character.id}`} key={character.id}>
+          <li>{character.name}</li>
+        </Link>
       ))}
     </ul>
   );
 }
-
-export default CharactersList;
