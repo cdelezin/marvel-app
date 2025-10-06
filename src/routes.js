@@ -1,16 +1,11 @@
 import AboutPage from './pages/AboutPage';
 import CharactersPage from './pages/CharactersPage';
-import CharacterDetailPage from './pages/CharacterDetailPage';
 import ContactPage from './pages/ContactPage';
 import Layout from './Layout';
 import NotFoundPage from './pages/NotFoundPage';
-import { getCharacters, getCharactersById } from './api/characters-api';
-
-// // Loader function for characters data
-const charactersLoader = async () => {
-  const characters = await getCharacters();
-  return { characters };
-};
+import { getCharacterById, getCharacters } from './api/characters-api';
+import { Component } from 'react';
+import CharacterDetailPage from './pages/CharacterDetailPage';
 
 // routes of the application
 const routes = [
@@ -21,11 +16,18 @@ const routes = [
       {
         // main page
         index: true,
-        loader : async () => {
+        loader: async () => {
+          // return data from here
           return { characters: await getCharacters() };
         },
-        Component: CharactersPage,
-        // loader: charactersLoader
+        Component: CharactersPage
+      },
+      {
+          path: "/characters/:id",
+          Component: CharacterDetailPage,
+          loader: ({ params }) => {
+            return getCharacterById(params.id);
+          }
       },
       {
         // about page
@@ -36,14 +38,6 @@ const routes = [
         // contact page
         path: "/contact",
         Component: ContactPage
-      },
-      {
-        path: "/characters/:id",
-        Component: CharacterDetailPage,
-        loader: async ({ params }) => {
-          const character = await getCharactersById(params.id);
-          return { character };
-        }
       },
       {
         // 404 page

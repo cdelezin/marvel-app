@@ -1,44 +1,25 @@
-import React from 'react';
-
-const CharacterDetail = ({ character }) => {
-  if (!character) {
-    return <p>Personnage non trouvé.</p>;
-  }
-
-  // Construire l'URL de l'image si thumbnail existe
-  const imageUrl = character.thumbnail && character.thumbnail.path && character.thumbnail.extension
-    ? `${character.thumbnail.path}.${character.thumbnail.extension}`
-    : null;
-
-  return (
-    <div>
-      <h2>{character.name}</h2>
-      
-      {imageUrl && (
-        <img 
-          src={imageUrl} 
-          alt={character.name} 
-          style={{ maxWidth: '300px', height: 'auto' }}
-        />
-      )}
-      
-      <div>
-        <p><strong>ID:</strong> {character.id}</p>
-        <p><strong>Nom:</strong> {character.name}</p>
-        
-        {character.description && character.description.trim() !== '' && (
-          <div>
-            <p><strong>Description:</strong></p>
+/**
+ * Component to render the details of a character
+ * @param {*} character - Character object 
+ */
+function CharacterDetail({ character = {} }) {
+    return !character.name ? (
+        // if character name is not provided, then display "No character"
+        <div>No character</div>
+    ) : (
+        // else display the character details
+        <div>
+            <h2>{character.name}</h2>
+            {character.thumbnail && (
+                <img
+                    src={`${character.thumbnail.path}/standard_large.${character.thumbnail.extension}`}
+                    alt={character.name}
+                />
+            )}
             <p>{character.description}</p>
-          </div>
-        )}
-        
-        {character.modified && (
-          <p><strong>Dernière modification:</strong> {new Date(character.modified).toLocaleString('fr-FR')}</p>
-        )}
-      </div>
-    </div>
-  );
-};
+            <p>{character.modified}</p>
+        </div>
+    );
+}
 
 export default CharacterDetail;

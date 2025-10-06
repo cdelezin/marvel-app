@@ -1,29 +1,29 @@
-// Fonction pour récupérer les personnages depuis l'API locale
-async function getCharacters() {
-	try {
-	const response = await fetch('./../data/characters.json');
-		if (!response.ok) {
-			throw new Error('Erreur lors de la récupération des personnages');
-		}
-		const data = await response.json();
-        
-	// console.log('Personnages Marvel:', data); // Suppression du log ici pour éviter le doublon
-		return data;
-	} catch (error) {
-		console.error('Erreur:', error);
-		return null;
-	}
-}
+console.log("Welcome to marvel app !");
 
-// Appel de la fonction pour afficher les personnages dans la console
-getCharacters().then(data => {
-	const ul = document.getElementById('characters');
-	if (ul && Array.isArray(data)) {
-		ul.innerHTML = '';
-		data.forEach(character => {
-			const li = document.createElement('li');
-			li.textContent = character.nom;
-			ul.appendChild(li);
-		});
-	}
+/**
+ * Get characters from json file 
+ * This function fetches character data from a local JSON file
+ * and returns a promise that resolves to the character data.
+ */
+const getCharacters = () => {
+    const API_URL = 'http://localhost:3000/data/characters.json';
+    return fetch(API_URL)
+        .then(response => response.json());
+
+};
+
+// Call getCharacters function, and add characters to the list
+const characters = getCharacters().then(characters => {
+    // Get the characters list element
+    const charactersList = document.getElementById('characters');
+
+    // Clear the list before adding new characters
+    charactersList.innerHTML = '';
+
+    // Loop through each character and create a list item
+    characters.forEach(character => {
+        const characterElement = document.createElement('li');
+        characterElement.textContent = character.name;
+        charactersList.appendChild(characterElement);
+    });
 });

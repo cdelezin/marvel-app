@@ -1,14 +1,7 @@
+export default function NumberOfCharacters({ characters = [] }) {
+    if (characters.length === 0) {
+      return <p>There is no character</p>;
+    }
 
-
-  function NumberOfCharacters({ characters = [] }) {
-
-  const count = characters.length;
-  
-  if (count === 0) {
-    return <p>There is no character</p>;
-  }
-  
-  return <p>There is {count} characters</p>;
+    return <p>There is {characters.length} characters</p>;
 }
-
-export default NumberOfCharacters;
