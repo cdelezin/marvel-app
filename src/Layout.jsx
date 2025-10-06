@@ -1,4 +1,6 @@
 import { NavLink, Outlet } from "react-router";
+import { version } from '../package.json';
+
 
 const Layout = () => {
     return (
@@ -15,7 +17,7 @@ const Layout = () => {
                 <Outlet />
             </main>
             <footer>
-                <p>Marvel App - 2025</p>
+                <p>Marvel App - {version}</p>
             </footer>
         </>
     );
