@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "prepare": "husky",
-    "test": "jest"
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "devmoji": "^2.3.0",
