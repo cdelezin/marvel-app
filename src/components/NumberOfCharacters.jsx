@@ -11,6 +11,10 @@ export default function NumberOfCharacters({ characters = [] }) {
       return <p>There is no character</p>;
     }
 
+    if (characters.length === 1) {
+      return <p>There is 1 character</p>;
+    }
+
     // If there are characters in the array
-    return <p>There is {characters.length} characters</p>;
+    return <p>There are {characters.length} characters</p>;
 }

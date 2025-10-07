@@ -15,7 +15,7 @@ describe('NumberOfCharacters component', () => {
     test('renders "There is 1 character" when characters array has one character', () => {
         const characters = ['Character 1'];
         render(<NumberOfCharacters characters={characters} />);
-        expect(screen.getByText('There is 1 characters')).toBeInTheDocument();
+        expect(screen.getByText('There is 1 character')).toBeInTheDocument();
     });
     test('renders "There is no character" when no characters are provided', () => {
   render(<NumberOfCharacters />);
