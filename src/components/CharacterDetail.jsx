@@ -10,12 +10,23 @@ function CharacterDetail({ character = {} }) {
         // else display the character details
         <div>
             <h2>{character.name}</h2>
+
+            {/* render ID and Name labels so tests (and UX) have clear labels */}
+            <p>
+                <strong>ID:</strong> {character.id}
+            </p>
+            <p>
+                <strong>Nom:</strong> {character.name}
+            </p>
+
             {character.thumbnail && (
                 <img
-                    src={`${character.thumbnail.path}/standard_large.${character.thumbnail.extension}`}
+                    // use the raw thumbnail path + extension (tests expect this format)
+                    src={`${character.thumbnail.path}.${character.thumbnail.extension}`}
                     alt={character.name}
                 />
             )}
+
             <p>{character.description}</p>
             <p>{character.modified}</p>
         </div>
